@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gmelaN의 포토폴리오</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script type="javascript" src="index.js"></script>
+</head>
+<body>
+    <div id="title">
+        <h1>학습 내용 정리</h1>
+    </div>
+    <div id="grid-view">
+        <div id="index">
+            <p>
+                <h2>Contact</h2>
+                <ul>
+                    <li>e-mail | gmelanals@gmail.com</li>
+                    <li>github | https://github.com/GmelaN/</li>
+                </ul>
+            </p>
+            <h2>Contents</h2>
+            <ul>
+                <li><a href=index.html>소개</a></li>
+                <li>
+                    <a href="projects.html">프로젝트</a>
+                    <ul>
+                        <li>아두이노를 이용한 미세먼지 측정기 만들기</li>
+                        <li>아두이노를 이용한 공기청정기 만들기</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="summary.html"><strong>학습 내용 정리</strong></a>
+                    <ul>
+                        <li>C 프로그래밍</li>
+                        <li>Java 프로그래밍</li>
+                        <li>Python 프로그래밍</li>
+                        <li>Baekjoon Online Judge</li>
+                        <li>딥러닝 입문</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+            <p id="perceptron">
+                <h3>퍼셉트론 Perceptron</h3>
+                <p>
+                    <h4>단일 퍼셉트론</h4>>
+                    <q>다수의 신호를 한 입력으로 받아 하나의 신호를 출력한다.</q>
+                    <p>n개의 신호를 받아, 각각의 신호에 가중치를 곱해 출력 신호에 반영합니다.<br>
+                    따라서, y = 0(w1x1 + w2x2 - b <= 0) or y = 1(w1x1 + w2x2 - b > 0)과 같은 구조를 띱니다. (여기서 x1, x2는 입력, w1, w2는 가중치, b는 편향, y는 출력입니다.)</p>
+                </p>
+                <p>
+                    <h4>퍼셉트론의 한계</h4>
+                    <q>단순 퍼셉트론만으로는 XOR 게이트를 구현하지 못한다.</q>
+                    <p>퍼셉트론 게이트를 x와 y를 입력값으로 받는 평면 좌표계에서,
+                    (0,0), (0,1), (1,0), (1,1) 네 점을 각각의 게이트 출력에 맞게 <strong>직선</strong>을 그어 구분짓는 작업으로 볼 수 있습니다.
+                    이 때, XOR은 각각의 경우 0, 1, 1, 0을 출력해야 합니다. 하지만 직선을 그어 구분짓는 작업으로 이를 할 수 없습니다. 즉 단순 퍼셉트론만으로는
+                    XOR 게이트를 구현해낼 수 없습니다.</p>
+                    <p>
+                        이 문제는 '단일 퍼셉트론으로는 선형 분류만 할 수 있다'는 것을 시사합니다.
+                    </p>
+                </p>
+                <p>
+                    <h4>다층 퍼셉트론</h4>
+                    <p>
+                        단순 퍼셉트론만으로는 할 수 있는 것이 많이 없습니다. 
+                        퍼셉트론의 진정한 강점은 '층을 쌓아' 다층 퍼셉트론을 만들 수 있다는 것입니다.
+                        앞서 언급했던 XOR 문제는 다층 퍼셉트론으로 해결할 수 있습니다.
+                        즉, 다층 퍼셉트론으로는 비선형 영역도 표현할 수 있습니다.
+                    </p>
+                </p>
+            </p>
+            <p id="neural_network">
+                <h3>신경망 Neural Network</h3>
+                <p>
+                    <h4>신경망</h4>
+                    <q>사람이 수동으로 가중치를 설정해야 했던 퍼셉트론과는 달리, 가중치 매개변수의 적절한 값을 데이터로부터 자동으로 학습한다.</q>
+                    <p>간단하게 '퍼셉트론 + 활성화 함수'로 정의할 수 있습니다.</p>
+                    <p>
+                        <h5>입력층, 출력층, 은닉층</h5>
+                        
+                    </p>
+                    <p>
+                        <p>
+                            <h5>활성화 함수</h5>
+                            <q>입력 신호의 총합을 출력 신호로 변환하는 함수</q>
+                            <p>이 함수의 매개 변수는 가중치와 입력값의 곱과 편향의 합입니다.</p>
+                        </p>
+                        <p>
+                            <h5>활성화 함수의 종류</h5>
+                            <p>
+                                <h6>계단 함수 Stair Function</h6>
+                                <q>h(x) = 1 (x > 0) or 0 (x <= 0)</q>
+                            </p>
+                            <p>
+                                <h6>시그모이드 함수 Sigmoid Function</h6>
+                                <q>h(x) = 1 / (1 + exp(-x))</q>
+                                
+                            </p>
+                            <h6>두 함수의 공통점과 차이점</h6>
+                            <p>
+                                <h7>공통점</h7>
+                                <p>
+                                    <q>증가 함수이고, 치역이 (0, 1)입니다.</q>
+                                    즉, 입력이 중요하다면 큰 값을 출력하고 입력이 중요하지 않다면 작은 값을 출력합니다.
+
+                                    <q>비선형 함수입니다.</q>
+                                    따라서 두 함수를 활성화 함수로 사용하면 신경망의 층을 깊게 할 수 있습니다.<br>
+                                    선형 함수를 사용하면 신경망의 층이 아무리 깊어도 결국 상수 배를 한 것과 같게 되므로 아무런 의미를 가지지 못합니다.<br>
+                                    예를 들어, h(x) = cx + d일 때 h(h(h(h(h(x))))) = (c^5)x + 5d입니다.
+                                </p>
+
+                                <h7>차이점</h7>
+                                <p>
+                                    <q>매끄러움의 차이</q>
+                                    시그모이드 함수는 미분 가능하고, 계단 함수는 미분 가능하지 않습니다.
+                                </p>
+                            </p>
+                            <p>
+                                <h6>ReLU(Rectified Linear Unit) 함수</h6>
+                                <span style="font-size: small;">*Rectified: 정류된</span>
+                                <q>h(x) = x (x > 0) or 0 (x <= 0)</q>
+                            </p>
+
+                        </p>
+
+                    </p>
+                </p>
+            </p>
+        </div>
+    </div>
+    <span style="display: block; text-align: center; text-decoration-color: gray;">gmelaN 2020</span>
+</body>
+</html>
