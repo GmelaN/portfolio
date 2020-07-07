@@ -80,9 +80,8 @@
                     <p>간단하게 '퍼셉트론 + 활성화 함수'로 정의할 수 있습니다.</p>
                     <p>
                         <h5>입력층, 출력층, 은닉층</h5>
-                        
                     </p>
-                    <p>
+                    <p id="NW-activation_function">
                         <p>
                             <h5>활성화 함수</h5>
                             <q>입력 신호의 총합을 출력 신호로 변환하는 함수</q>
@@ -125,10 +124,40 @@
                             </p>
 
                         </p>
-
                     </p>
+                    <p id="NW-normalization_function">
+                        <p>
+                            <h5>정규화 함수</h5>
+                            <q>각 뉴런의 출력값에 대한 정규화를 해 주는 함수</q>
+                        </p>
+                        <p id="NW-NF-kind_of_normalization_function">
+                            <h5>정규화 함수의 종류</h5>
+                            <p>
+                                <h6>소프트맥스 함수 Softmax Function</h6>
+                                <q>y_k = exp(a_k) / sigma(i = 1, n) exp(a_i)</q>
+                                <p>
+                                    (지수함수 사용) 지수적 폭발로 인한 오버플로우 위험이 있습니다. 따라서 보통 a_k에서 C(상수; 보통 입력되는 배열의 최댓값을 사용합니다)를 더한 값을 지수함수의 매개변수로 사용합니다.<br>
+                                    Dom(softmax) = {x | 0 <= x <= 1}입니다. 따라서 이 함수의 출력값은 '확률'로 해석할 수 있습니다.
+                                    <q>y_k = exp(a_k + C') / sum(exp(a_k + C'))</q>
+                                    <p>
+                                        <h7>유도 과정</h7><br>
+                                        y_k<br>
+                                         = C * exp(a_k) / C * sum(exp(a_i))<br>
+                                         = exp(a_k + ln C) / sum(exp(a_i + ln C)) (ln C = C'으로 치환)<br>
+                                         = exp(a_k + C') / sum(exp(a_i + C'))
+                                    </p>                                    
+                                </p>
+                            </p>
+                        </p>
+                    </p>
+                    <p id="set_number_of_output_step">
+                        
+                    </p>
+
                 </p>
             </p>
+
+
         </div>
     </div>
     <span style="display: block; text-align: center; text-decoration-color: gray;">gmelaN 2020</span>
